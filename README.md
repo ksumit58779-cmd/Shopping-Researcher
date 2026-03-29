@@ -20,4 +20,4 @@ Use also js, html and css for not play in terminal but see in a live page that e
 4. a simple agent that give answer of any question
 
 
-Use gemini api key for every project because this is free tier and enough to pracice but when you are in phase of learning to earning you need to use claude or openai key
+Use gemini api key for every project because this is free tier and enough to practice but when you are in phase of learning to earning you need to use claude or openai key
