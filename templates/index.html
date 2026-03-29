@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sumit's AI Shopping Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Floating background orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">SUMIT<span class="logo-accent">SHOPS</span></span>
+    </div>
+    <nav class="nav-hint">Powered by Gemini × Tavily</nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">AI Shopping Agent</div>
+    <h1 class="hero-title">
+      Find Your<br/>
+      <span class="hero-title-accent">Perfect Product</span>
+    </h1>
+    <p class="hero-sub">Personalized Amazon recommendations — just for Sumit.</p>
+
+    <!-- Search Box -->
+    <div class="search-wrapper">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search for anything on Amazon..."
+          autocomplete="off"
+        />
+        <button class="search-btn" id="searchBtn" onclick="handleSearch()">
+          <span class="btn-text">Search</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+
+      <!-- Quick suggestions -->
+      <div class="suggestions">
+        <span class="suggest-label">Try:</span>
+        <button class="suggest-chip" onclick="quickSearch('black t shirt old money style')">Black T-Shirt</button>
+        <button class="suggest-chip" onclick="quickSearch('gym shorts 170cm height')">Gym Shorts</button>
+        <button class="suggest-chip" onclick="quickSearch('classic white sneakers')">White Sneakers</button>
+        <button class="suggest-chip" onclick="quickSearch('minimal backpack')">Backpack</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loading State -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader-card">
+      <div class="loader-spinner"></div>
+      <p class="loader-text" id="loaderText">Searching Amazon...</p>
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Section -->
+  <section class="results-section" id="resultsSection">
+    <div class="results-header">
+      <span class="results-label">✦ Recommendation</span>
+      <h2 class="results-title" id="resultsTitle">Your Results</h2>
+    </div>
+    <div class="results-card" id="resultsCard">
+      <div id="resultsContent"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built by <span class="footer-accent">Sumit Kumar</span> · AI Engineer · India 🇮🇳</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
